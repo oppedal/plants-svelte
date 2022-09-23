@@ -5,7 +5,8 @@
 		</h1>
 	</div>
 	<div
-		class="custom-p row-start-2 row-end-6 col-start-1 col-span-full grid place-content-center items-center align-middle lg:row-start-1"
+		class="custom-p row-start-2 row-end-6 col-start-1 
+    col-span-full grid place-content-center items-center align-middle lg:row-start-1"
 	>
 		<div id="slider" class="keen-slider  gsap-gallery items-center plant-cards flex" />
 	</div>
