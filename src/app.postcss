@@ -1,0 +1,343 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'TriptychTest-Italick';
+	src: url('./assets/font/TriptychTest-Italick.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'TriptychTest-Grotesque';
+	src: url('./assets/font/TriptychTest-Grotesque.woff2') format('woff2');
+}
+
+:root {
+	/* Color */
+	--clr-light: #f7ede2;
+	--clr-dark: #84a59d;
+	/* Spacing */
+	--column-gap: 1rem;
+	--row-gap: 4rem;
+
+	/* Font sizes */
+	--step--2: clamp(0.65rem, calc(0.59rem + 0.33vw), 0.88rem);
+	--step--1: clamp(0.78rem, calc(0.69rem + 0.46vw), 1.1rem);
+	--step-0: clamp(0.94rem, calc(0.81rem + 0.63vw), 1.38rem);
+	--step-1: clamp(1.13rem, calc(0.96rem + 0.85vw), 1.72rem);
+	--step-2: clamp(1.35rem, calc(1.12rem + 1.14vw), 2.15rem);
+	--step-3: clamp(1.62rem, calc(1.32rem + 1.52vw), 2.69rem);
+	--step-4: clamp(1.94rem, calc(1.54rem + 2.02vw), 3.36rem);
+	--step-5: clamp(2.33rem, calc(1.8rem + 2.66vw), 4.2rem);
+	--step-6: clamp(2.8rem, calc(2.1rem + 3.49vw), 5.25rem);
+}
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	background-color: var(--clr-dark);
+	font-family: 'TriptychTest-Grotesque';
+}
+img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+/* Typography, font calculator: https://utopia.fyi/type/calculator/ */
+.text-h1 {
+	font-size: var(--step-6);
+	line-height: 1;
+}
+.text-h2 {
+	font-size: var(--step-5);
+}
+.text-h3 {
+	font-size: var(--step-4);
+}
+.text-h4 {
+	font-size: var(--step-3);
+}
+.text-h5 {
+	font-size: var(--step-2);
+}
+.text-h6 {
+	font-size: var(--step-1);
+}
+.text-h7 {
+	font-size: var(--step-0);
+}
+.text-h8 {
+	font-size: var(--step--1);
+	max-width: 80ch;
+}
+.text-h9 {
+	font-size: var(--step--2);
+}
+.italick {
+	font-family: 'TriptychTest-Italick';
+	color: #ffffff;
+}
+.italick-fs {
+	font-size: 3.75rem;
+}
+/* GRIDs, heights, margins and paddings */
+
+.max-80 {
+	max-height: 80vh;
+}
+.max-50 {
+	max-height: 50vh;
+}
+.height-50 {
+	height: 50vh;
+}
+.max-60 {
+	height: fit-content;
+}
+.max-chars {
+	max-width: 45ch;
+}
+@screen lg {
+	:root {
+		--column-gap: 2rem;
+	}
+}
+
+.max-w-img {
+	max-width: 30vw;
+}
+.max-w-35 {
+	max-width: 35vw;
+}
+.max-img {
+	max-height: 75vh;
+	width: 100%;
+}
+.custom-width {
+	width: 100vw;
+}
+@media screen and (min-width: 1024px) {
+	.custom-width {
+		width: 50vw;
+	}
+}
+@media screen and (max-width: 640px) {
+	.max-img {
+		max-height: 35vh;
+		max-width: 100%;
+	}
+	.max-w-h {
+		max-height: 55vh;
+		max-width: 280px;
+	}
+}
+@media (orientation: portrait) {
+	.max-img {
+		max-height: 80vh;
+		max-width: 100%;
+	}
+}
+.h-screen {
+	height: calc(var(--vh) * 100);
+}
+.h-screen-small {
+	height: calc((var(--vh) * 100) / 1.7);
+}
+.wrapper {
+	padding-left: calc(var(--column-gap) * 2);
+	padding-right: calc(var(--column-gap) * 2);
+	max-width: 1440px;
+	margin-inline: auto;
+}
+
+.wrapper-gallery {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-top: 5em;
+	padding-bottom: 1em;
+}
+
+@media screen and (max-width: 640px) {
+	.wrapper-gallery {
+		padding-top: 5em;
+	}
+}
+
+.margin-inline {
+	margin-inline: auto;
+}
+.custom-padding-2x {
+	padding-left: calc(var(--column-gap) * 2);
+	padding-right: calc(var(--column-gap) * 2);
+}
+.custom-padding {
+	padding-left: calc(var(--column-gap));
+	padding-right: calc(var(--column-gap));
+}
+.custom-margin {
+	margin-top: var(--column-gap);
+	margin-bottom: var(--column-gap);
+}
+.margin-inline {
+	margin-inline: auto;
+}
+.custom-grid {
+	display: grid;
+	grid-template-rows: 0.5fr 1fr 0.5fr;
+}
+
+/* MISC */
+.intro-text {
+	position: absolute;
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+.hero-one-line {
+}
+.hiddentext {
+	display: none;
+}
+/* Logo changes color depending on bg image */
+.logo {
+	color: var(--clr-light);
+	border-color: var(--clr-light);
+}
+.logo.background--light {
+	color: var(--clr-dark);
+	border-color: var(--clr-dark);
+}
+
+.logo.background--dark {
+	color: var(--clr-light);
+}
+
+/* Image resize on entries, desktop and mobile */
+
+.entry-image {
+	width: 50vw;
+	height: 100vh;
+}
+@media screen and (max-width: 1024px) {
+	.entry-image {
+		width: 100vw;
+		height: 60vh;
+	}
+	.custom-grid {
+		grid-template-rows: 1fr;
+	}
+}
+/* Center the nav */
+.nav-center {
+	padding-left: calc(var(--column-gap));
+	padding-right: calc(var(--column-gap));
+}
+@media screen and (min-width: 955px) {
+	.nav-center {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/* SWIPER */
+
+.plant-card {
+	opacity: 1;
+	transition: none;
+}
+
+.hide-text {
+	display: none;
+}
+
+.plant-card-text {
+	opacity: 0;
+}
+.loaded .plant-card-text {
+	opacity: 1;
+}
+.loaded .nav-center {
+	opacity: 1;
+}
+
+/* TAILWIND  */
+
+@layer utilities {
+	.grid {
+		column-gap: var(--column-gap);
+		row-gap: var(--row-gap);
+	}
+}
+
+/* Fit fontloader, makes h1 span entire page */
+.fonts-loaded .fit {
+	font-family: 'TriptychTest-Grotesque', serif;
+}
+.fit {
+	line-height: 1;
+	text-transform: uppercase;
+	text-align: center;
+	display: inline-block;
+	white-space: nowrap;
+}
+/* Mouse shows on hover at list page */
+.mouse-image {
+	position: absolute;
+	display: none;
+	max-width: 250px;
+	max-height: 350px;
+}
+.plant-link {
+	position: relative;
+}
+.plant-link:hover {
+	text-decoration-color: var(--clr-light);
+	color: var(--clr-light);
+}
+
+.plant-link:hover ~ .mouse-image {
+	position: fixed;
+	display: inline-block;
+	z-index: 10;
+}
+/* Remove hover-effect on mobile */
+@media screen and (max-width: 700px) {
+	.plant-link:hover ~ .mouse-image {
+		display: none;
+	}
+	.plant-link:hover {
+		text-decoration: none;
+		color: var(--clr-light);
+	}
+	.plant-link {
+		text-decoration: none;
+		transition: none;
+		text-decoration-thickness: unset;
+	}
+}
+.image-link:hover ~ div > .italick {
+	color: var(--clr-light);
+}
+/* WSIWYG */
+.wsiwyg > h4 {
+	font-size: var(--step-2);
+	padding-bottom: 1em;
+}
+.wsiwyg > p > strong {
+	text-transform: uppercase;
+}
+.wsiwyg > p > em {
+}
+.lazy {
+	opacity: 1;
+	transition: 1s opacity;
+}
+
+.lazy.waiting {
+	opacity: 0;
+}
