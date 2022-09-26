@@ -23,7 +23,7 @@
 		<nav class="col-span-12 flex items-center contrast-bg justify-between">
 			<a href="/" class="logo uppercase text-[16px] lg:text-2xl">Skogen Plants</a>
 			<a
-				href="plants"
+				href="/plants/"
 				class="logo uppercase text-[14px] lg:text-[16px] px-3 rounded-full py-1 font-bold border border-darkGreen"
 				>list
 			</a>
